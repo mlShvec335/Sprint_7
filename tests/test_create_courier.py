@@ -1,15 +1,16 @@
 import pytest
 import allure
 from helpers import *
-from conftest import create_and_delete_courier
+from conftest import create_and_delete_courier, create_and_delete_unregistered_courier
 from data import CourierData, APILinks
 
 
 class TestCreateCourier:
-    @allure.title('Создание нового курьера')
-    def test_create_courier(self, create_and_delete_courier):
-        courier_data = create_and_delete_courier[0]
-        assert courier_data.status_code == 201 and courier_data.text == '{"ok":true}'
+    @allure.title('Успешное создание нового курьера')
+    def test_create_courier(self, create_and_delete_unregistered_courier):
+        payload = create_and_delete_unregistered_courier
+        r = requests.post(APILinks.MAIN_URL + APILinks.COURIER_URL, data=payload)
+        assert r.status_code == 201 and r.text == '{"ok":true}'
 
     @allure.title('Нельзя создать одинаковых курьеров')
     def test_create_the_same_courier(self, create_and_delete_courier):

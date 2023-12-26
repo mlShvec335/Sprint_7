@@ -3,12 +3,13 @@ import random
 import string
 
 
-def register_new_courier_and_return_login_password():
-    def generate_random_string(length):
-        letters = string.ascii_lowercase
-        random_string = ''.join(random.choice(letters) for i in range(length))
-        return random_string
+def generate_random_string(length):
+    letters = string.ascii_lowercase
+    random_string = ''.join(random.choice(letters) for i in range(length))
+    return random_string
 
+
+def register_new_courier_and_return_login_password():
     login_pass = []
 
     login = generate_random_string(10)
@@ -29,3 +30,11 @@ def register_new_courier_and_return_login_password():
         login_pass.append(first_name)
 
     return response, login_pass
+
+
+def generate_login_pass():
+    login_pass = []
+    for i in range(3):
+        random_login_pass_data = generate_random_string(10)
+        login_pass.append(random_login_pass_data)
+    return login_pass
