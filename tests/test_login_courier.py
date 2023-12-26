@@ -6,7 +6,7 @@ from data import APILinks, CourierData
 
 
 class TestLoginCourier:
-    @allure.title('Успешная авторизация курьера')
+    @allure.title('Успешная регистрация нового курьера с валидными данными')
     def test_login_courier(self, create_and_delete_courier):
         payload = {"login": create_and_delete_courier[1][0],
                    "password": create_and_delete_courier[1][1]}
