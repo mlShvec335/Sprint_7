@@ -4,7 +4,7 @@ from data import APILinks
 
 
 @pytest.fixture(scope='function')
-def delete_courier():
+def create_and_delete_courier():
     response, login_pass = register_new_courier_and_return_login_password()
     yield response, login_pass
 
