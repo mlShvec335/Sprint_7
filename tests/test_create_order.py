@@ -11,5 +11,5 @@ class TestCreateOrder:
     def test_create_order(self, color):
         OrderData.order_data["color"] = [color]
         payload = json.dumps(OrderData.order_data)
-        r = requests.post(APILinks.main_url + APILinks.main_orders_url, data=payload)
+        r = requests.post(APILinks.MAIN_URL + APILinks.ORDERS_URL, data=payload)
         assert r.status_code == 201 and 'track' in r.text

@@ -13,6 +13,6 @@ def create_and_delete_courier():
         "password": login_pass[1]
     }
 
-    courier_signin = requests.post(APILinks.main_url + APILinks.login_url, data=payload)
+    courier_signin = requests.post(APILinks.MAIN_URL + APILinks.LOGIN_URL, data=payload)
     courier_id = courier_signin.json()["id"]
-    requests.delete(APILinks.main_url + APILinks.login_url + str(courier_id))
+    requests.delete(APILinks.MAIN_URL + APILinks.LOGIN_URL + str(courier_id))

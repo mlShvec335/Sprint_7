@@ -1,8 +1,8 @@
 class APILinks:
-    main_url = 'https://qa-scooter.praktikum-services.ru/'
-    login_url = 'api/v1/courier/login'
-    courier_url = 'api/v1/courier/'
-    main_orders_url = 'api/v1/orders'
+    MAIN_URL = 'https://qa-scooter.praktikum-services.ru/'
+    LOGIN_URL = 'api/v1/courier/login'
+    COURIER_URL = 'api/v1/courier/'
+    ORDERS_URL = 'api/v1/orders'
 
 
 class CourierData:
