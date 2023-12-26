@@ -18,4 +18,7 @@ III. Создание заказа
 IV. Список заказов
 1. test_get_orders_list - получение списка заказов
 
+- Запуск тестов pytest \tests -v
+- Создание отчета pytest \tests --alluredir=allure_results 
+- Формирование отчёта allure serve allure_results 
 - Отчёты о тестировании в allure_results
